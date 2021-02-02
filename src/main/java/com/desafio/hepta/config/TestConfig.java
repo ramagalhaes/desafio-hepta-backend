@@ -24,8 +24,11 @@ public class TestConfig implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		Setor setor = new Setor(null, "vendas");
+		Setor setor2 = new Setor(null, "tecnologia");
+		
 		
 		setorRepository.save(setor);
+		setorRepository.save(setor2);
 		
 		Funcionario f1 = new Funcionario(null, "raphael", setor, 100.0, "raphael@hotmail.com", 22);
 		Funcionario f2 = new Funcionario(null, "Pedro", setor, 150.0, "pedro@hotmail.com", 40);

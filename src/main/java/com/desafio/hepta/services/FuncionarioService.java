@@ -29,6 +29,8 @@ public class FuncionarioService {
 	}
 	
 	public Funcionario insert(Funcionario obj) {
+		Setor setor = setorService.findByNome(obj.getSetor().getNome());
+		obj.setSetor(setor);
 		return repository.save(obj);
 	}
 	

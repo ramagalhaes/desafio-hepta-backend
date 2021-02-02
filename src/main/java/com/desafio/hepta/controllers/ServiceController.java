@@ -19,14 +19,15 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.desafio.hepta.entities.Funcionario;
 import com.desafio.hepta.services.FuncionarioService;
 
-@CrossOrigin
 @RestController
 @RequestMapping(value = "/funcionarios")
-public class FuncionarioController {
+@CrossOrigin
+public class ServiceController {
 	
 	@Autowired
 	FuncionarioService service;
 	
+	@CrossOrigin
 	@GetMapping
 	public ResponseEntity<List<Funcionario>> findAll(){
 		try{
@@ -39,6 +40,7 @@ public class FuncionarioController {
 		
 	}
 	
+	@CrossOrigin
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Funcionario> findById(@PathVariable Integer id){
 		try {
@@ -58,6 +60,7 @@ public class FuncionarioController {
 		return ResponseEntity.created(uri).body(funcionario);
 	}
 	
+	@CrossOrigin
 	@DeleteMapping(value="/{id}")
 	public ResponseEntity<Void> delete(@PathVariable Integer id){
 		try {
@@ -69,6 +72,7 @@ public class FuncionarioController {
 		}
 	}
 	
+	@CrossOrigin
 	@PutMapping(value = "/{id}")
 	public ResponseEntity<Funcionario> update(@PathVariable Integer id, @RequestBody Funcionario obj){
 		try {
